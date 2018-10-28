@@ -13,7 +13,7 @@
   opacity: 0.95;
 }
 
-@media screen and (max-width:395px){
+@media screen and (max-width:460px){
   #quote-box{
     background-color:white;
     height: 70%;
@@ -34,13 +34,13 @@
   #clickable{
     margin-top:auto;
     display: block;
-    height: 9vh;
+    height: 8vh;
   }
 
   .button {
     background-color: black;
-    min-width: 8.5vh;
-    height:85%;
+    min-width: 8vh;
+    height:80%;
     color: white;
     cursor: pointer;  
     font-size: 1em;
@@ -50,23 +50,22 @@
   }
 
   #tweet-quote {
-    min-width: 8.5vh;
-    height:85%;
+    min-width: 8vh;
+    height:80%;
     color: white;
-    text-decoration: unset;    
-    border-radius: .8em;
+    text-decoration: unset; 
     opacity: 0.8;
   }
 
   #new-quote {
     float: right;
-    padding: 1%;  
-    border-radius: 2%;
+    padding: 1%;     
+    border-radius: .8em;
   }
 }
 
 
-@media screen and (min-width:395px){
+@media screen and (min-width:460px){
   #quote-box{
     background-color:white;
     height: 75%;
@@ -89,12 +88,12 @@
   #clickable{
     margin-top:auto;
     display: block;
-    height: 9vh;
+    height: 9.5vh;
   }
   
   .button {
-    min-width: 9vh;
-    height:90%;
+    min-width: 9.5vh;
+    height:95%;
     color: white;
     cursor: pointer;  
     font-size: 1.25em;
@@ -104,8 +103,8 @@
   }
 
   #tweet-quote {
-    min-width: 9vh;
-    height:90%;
+    min-width: 9.5vh;
+    height:95%;
     color: white;
     text-decoration: unset;
   }
