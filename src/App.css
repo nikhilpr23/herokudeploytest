@@ -45,14 +45,17 @@
     cursor: pointer;  
     font-size: 1em;
     margin-left: .5vw;
-    border-radius: 2%;
+    border-radius: .4em;
+    opacity: 0.8;
   }
 
   #tweet-quote {
     min-width: 8.5vh;
     height:85%;
     color: white;
-    text-decoration: unset;
+    text-decoration: unset;    
+    border-radius: .8em;
+    opacity: 0.8;
   }
 
   #new-quote {
@@ -90,8 +93,8 @@
   }
   
   .button {
-    min-width: 9.5vh;
-    height:95%;
+    min-width: 9vh;
+    height:90%;
     color: white;
     cursor: pointer;  
     font-size: 1.25em;
@@ -101,8 +104,8 @@
   }
 
   #tweet-quote {
-    min-width: 9.5vh;
-    height:95%;
+    min-width: 9vh;
+    height:90%;
     color: white;
     text-decoration: unset;
   }
