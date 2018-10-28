@@ -12,8 +12,52 @@
   height: 100vh;
   padding-top: 20vh;
 }
+@media screen and (max-width:360px){
+#quote-box{
+  background-color:white;
+  height: 85%;
+  width: 80%;  
+  padding: 2%;    
+  display: flex;
+  flex-direction: column;
+}
+#text { 
+  min-height: 20vh;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: 'Philosopher', sans-serif;
+  display: block;
+}
+#clickable{
+  margin-top:auto;
+  display: block;
+  height: 9vh;
+}
 
-@media screen and (max-width:560px){
+.button {
+  background-color: black;
+  min-width: 8.5vh;
+  height:85%;
+  color: white;
+  cursor: pointer;  
+  font-size: 1em;
+  margin-left: .5vw;
+}
+
+#tweet-quote {
+  background-color: black;
+  min-width: 8.5vh;
+  height:85%;
+  color: white;
+  text-decoration: unset;
+}
+
+#new-quote {
+  float: right;
+  padding: 1%;
+}
+}
+@media screen and (min-width:360px){
   #quote-box{
     background-color:white;
     height: 85%;

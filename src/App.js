@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       quote: "",
       author: "",
-      allQuotes: []
+      allQuotes: [],
+      color: "black"
     } 
     this.handleClick = this.handleClick.bind(this);     
   //  this.tweetQuote = this.tweetQuote.bind(this);
