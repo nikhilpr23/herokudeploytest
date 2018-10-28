@@ -11,7 +11,9 @@ class App extends Component {
       allQuotes: []
     } 
     this.handleClick = this.handleClick.bind(this);     
-    this.tweetQuote = this.tweetQuote.bind(this);
+  //  this.tweetQuote = this.tweetQuote.bind(this);
+    this.postQuote = this.postQuote.bind(this);
+    this.forkCode = this.forkCode.bind(this);
   } 
 
   componentDidMount(){
@@ -25,9 +27,17 @@ class App extends Component {
                       quote: this.state.allQuotes[randomNum].quote, 
                       author: this.state.allQuotes[randomNum].author}));
   }
-
-  tweetQuote(){
+  // used <a> tag for tweet quotes to pass the tests, else if we'd used a <button>, then this function will be onClick 
+  /*tweetQuote(){
     window.open('https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+this.state.quote, '_blank');
+  }*/
+
+  postQuote(){
+    alert('This feature is in development. Not available at the moment.');
+  }
+
+  forkCode(){
+    window.open('https://github.com/nikhilpr23/randomQuoteMachine','_blank');
   }
 
   handleClick(){
@@ -43,14 +53,16 @@ class App extends Component {
       <div className="container">
         <div id="quote-box">
           <div id="text">
-            {this.state.quote}
+            <span className="quotes">"</span>{this.state.quote}<span className="quotes">"</span>
           </div>
           <div id="author">
             - {this.state.author}
           </div>
           <div id="clickable">
-            <button className="button"><a id='tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+encodeURIComponent(this.state.quote+' -- '+this.state.author)} 
-            target='_blank'>Twitter</a></button>
+            <button className="button" title="Tweet this Quote"><a id='tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+encodeURIComponent(this.state.quote+' -- '+this.state.author)} 
+            target='_blank'><i class="fa fa-twitter"></i></a></button>
+            <button className="button" title="Post this quote on Facebook" onClick={this.postQuote}><i class="fa fa-facebook-square"></i></button>
+            <button className="button" title="Fork this Github repo" onClick={this.forkCode}><i class="fa fa-github"></i></button>
             <button className="button" id="new-quote" onClick={this.handleClick}>New Quote</button>
           </div>
         </div>
