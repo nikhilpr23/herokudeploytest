@@ -49,7 +49,7 @@ class App extends Component {
             - {this.state.author}
           </div>
           <div id="clickable">
-            <button className="button"><a id='tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+this.state.quote+' -- '+this.state.author} 
+            <button className="button"><a id='tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+encodeURIComponent(this.state.quote+' -- '+this.state.author)} 
             target='_blank'>Twitter</a></button>
             <button className="button" id="new-quote" onClick={this.handleClick}>New Quote</button>
           </div>
