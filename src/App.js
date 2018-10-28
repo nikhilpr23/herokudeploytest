@@ -9,9 +9,9 @@ class App extends Component {
       quote: "",
       author: "",
       allQuotes: [],
-      color: "black"
+      color: "darkblue"
     } 
-    this.handleClick = this.handleClick.bind(this);     
+    this.newQuote = this.newQuote.bind(this);     
   //  this.tweetQuote = this.tweetQuote.bind(this);
     this.postQuote = this.postQuote.bind(this);
     this.forkCode = this.forkCode.bind(this);
@@ -41,30 +41,33 @@ class App extends Component {
     window.open('https://github.com/nikhilpr23/randomQuoteMachine','_blank');
   }
 
-  handleClick(){
+  newQuote(){
+    let colors= ['saddlebrown','slategrey','navy', 'maroon', 'olive', 'indigo', 'firebrick', 'black', 'purple', 'rebeccapurple', 'dimgray']
     let randomNum = Math.floor(Math.random()*(this.state.allQuotes.length));
+    let randomColorNum = Math.floor(Math.random()*(colors.length));
     this.setState({
       quote: this.state.allQuotes[randomNum].quote,
-      author: this.state.allQuotes[randomNum].author
+      author: this.state.allQuotes[randomNum].author,
+      color: colors[randomColorNum]
     })
   }
 
   render() {   
     return (
-      <div className="container">
+      <div className="container" style={{backgroundColor: this.state.color}}>
         <div id="quote-box">
-          <div id="text">
+          <div id="text" style={{color: this.state.color}}>
             <span className="quotes">"</span>{this.state.quote}<span className="quotes">"</span>
           </div>
-          <div id="author">
+          <div id="author" style={{color: this.state.color}}>
             - {this.state.author}
           </div>
           <div id="clickable">
-            <button className="button" title="Tweet this Quote"><a id='tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+encodeURIComponent(this.state.quote+' -- '+this.state.author)} 
+            <button className="button" title="Tweet this Quote" style={{backgroundColor: this.state.color}}><a id='tweet-quote' style={{backgroundColor: this.state.color}} href={'https://twitter.com/intent/tweet?hashtags=RandomQuotes&text='+encodeURIComponent(this.state.quote+' -- '+this.state.author)} 
             target='_blank'><i class="fa fa-twitter"></i></a></button>
-            <button className="button" title="Post this quote on Facebook" onClick={this.postQuote}><i class="fa fa-facebook-square"></i></button>
-            <button className="button" title="Fork this Github repo" onClick={this.forkCode}><i class="fa fa-github"></i></button>
-            <button className="button" id="new-quote" onClick={this.handleClick}>New Quote</button>
+            <button className="button" title="Post this quote on Facebook" onClick={this.postQuote} style={{backgroundColor: this.state.color}}><i class="fa fa-facebook-square"></i></button>
+            <button className="button" title="Fork this Github repo" onClick={this.forkCode} style={{backgroundColor: this.state.color}}><i class="fa fa-github"></i></button>
+            <button className="button" id="new-quote" onClick={this.newQuote} style={{backgroundColor: this.state.color}}>New Quote</button>
           </div>
         </div>
       </div>
